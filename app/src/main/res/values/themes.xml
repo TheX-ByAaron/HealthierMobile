@@ -4,6 +4,7 @@
     <style name="Theme.Healthier" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@color/RoyalBlack</item>
         <item name="android:windowBackground">@color/RoyalBlack</item>
+        <item name="android:fontFamily">@font/poppins</item>
     </style>
 
     <style name="Theme.appLauncher" parent="">

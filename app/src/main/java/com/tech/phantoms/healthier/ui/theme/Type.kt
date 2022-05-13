@@ -2,9 +2,12 @@ package com.tech.phantoms.healthier.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.tech.phantoms.healthier.R
 
 // Set of Material typography styles to start with
 val Typography = Typography(
@@ -25,4 +28,15 @@ val Typography = Typography(
         fontSize = 12.sp
     )
     */
+)
+
+val appFontFamily = FontFamily(
+    fonts = listOf(
+        Font(R.font.poppins_medium
+            , FontWeight.Medium
+            , FontStyle.Normal),
+        Font(R.font.poppins_bold
+            , FontWeight.Bold
+            , FontStyle.Normal)
+    )
 )

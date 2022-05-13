@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.sp
 import com.tech.phantoms.healthier.ui.theme.FullRounded
 import com.tech.phantoms.healthier.ui.theme.HealthierTheme
 import com.tech.phantoms.healthier.ui.theme.Hpink
+import com.tech.phantoms.healthier.ui.theme.appFontFamily
 
 
 @Composable
@@ -36,6 +37,7 @@ fun Hbutton(modifier: Modifier = Modifier
 
         Text(text = text
             , fontSize = 16.sp
+            , fontFamily = appFontFamily
             , fontWeight = FontWeight.Bold
             , color = Color.White)
     }
@@ -45,6 +47,6 @@ fun Hbutton(modifier: Modifier = Modifier
 @Composable
 fun mainPreview(){
     HealthierTheme {
-        Hbutton(text = "Connect to your account")
+        Hbutton(text = "Live preview")
     }
 }
