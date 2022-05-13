@@ -48,7 +48,8 @@ fun HomeAuth(navController: NavController){
         }
 
         if(isWearableConfirmationDialogOpen){
-            WearableDialog()
+            WearableDialog(isOpen = isWearableConfirmationDialogOpen
+                , setIsOpen = setWearableConfirmation)
         }
 
         Image(painter = painterResource(id = R.drawable.ic_logo_stripped)
@@ -81,7 +82,7 @@ fun HomeAuth(navController: NavController){
         Hbutton(modifier = Modifier.padding(top = 32.dp, bottom = 8.dp)
             , text = "Connect your account"
             , onClick = {
-                //TODO: launch the Terra authentification flow
+                setWearableConfirmation(true)
 
             })
 
@@ -90,6 +91,7 @@ fun HomeAuth(navController: NavController){
             , tint = MaterialTheme.colors.Hpink
             , onClick = {
                 //TODO: launch the coach page
+
             })
 
         Text(text = "By connecting to this app, you are agreeing to the"

@@ -33,7 +33,8 @@ class AuthActivity : ComponentActivity() {
             MainActivityScreenContent {
                     NavHost(navController = navController, startDestination = "HomeAuth"){
                         composable("HomeAuth"){ HomeAuth(navController = navController) }
-                        composable("CoachAuth"){ CoachAuth(navController = navController) }
+                        composable("CoachLogin"){ CoachAuth(navController = navController) }
+                        composable("CoachRegister"){}
                         composable("Categories"){ CategoryChoice(navController = navController) }
                     }
             }
