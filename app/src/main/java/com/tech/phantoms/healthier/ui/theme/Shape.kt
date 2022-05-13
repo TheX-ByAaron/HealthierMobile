@@ -14,3 +14,6 @@ val Shapes = Shapes(
 
 val Shapes.FullRounded : Shape
     get() = RoundedCornerShape(size = 1000.dp)
+
+val Shapes.MediumRound: Shape
+    get() = RoundedCornerShape(size = 20.dp)
