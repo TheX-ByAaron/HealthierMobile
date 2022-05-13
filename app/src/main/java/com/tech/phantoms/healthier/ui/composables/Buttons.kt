@@ -31,7 +31,6 @@ fun Hbutton(modifier: Modifier = Modifier
 
     Box(modifier = modifier
         .height(50.dp)
-        .wrapContentWidth()
         .background(
             color = MaterialTheme.colors.Hpink,
             shape = MaterialTheme.shapes.FullRounded)

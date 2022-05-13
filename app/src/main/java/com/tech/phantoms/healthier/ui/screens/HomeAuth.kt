@@ -79,19 +79,24 @@ fun HomeAuth(navController: NavController){
                 .padding(start = 16.dp, end = 16.dp)
                 .fillMaxWidth())
 
-        Hbutton(modifier = Modifier.padding(top = 32.dp, bottom = 8.dp)
+        Hbutton(modifier = Modifier
+            .padding(top = 32.dp, bottom = 8.dp, start = 16.dp, end = 16.dp)
+            .fillMaxWidth()
             , text = "Connect your account"
             , onClick = {
                 setWearableConfirmation(true)
 
             })
 
-        HTextButton(modifier = Modifier.padding(bottom = 8.dp)
+        HTextButton(modifier = Modifier
+            .padding(bottom = 8.dp)
             , text= "I am a coach"
             , tint = MaterialTheme.colors.Hpink
             , onClick = {
                 //TODO: launch the coach page
-
+                navController.navigate("CoachRegister"){
+                    launchSingleTop = true
+                }
             })
 
         Text(text = "By connecting to this app, you are agreeing to the"
@@ -104,9 +109,9 @@ fun HomeAuth(navController: NavController){
                 .padding(start = 16.dp, end = 16.dp)
                 .fillMaxWidth())
 
-        HTextButton(text = "app's policy", tint = MaterialTheme.colors.Hyellow
+        HTextButton(text = "app's policy"
+            , tint = MaterialTheme.colors.Hyellow
             , onClick = {
-                //TODO: launch the app's policy dialog
                 setPolicyDialog(true)
 
             })
