@@ -55,6 +55,9 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
     implementation 'androidx.activity:activity-compose:1.3.1'
 
+    //Compose navigation
+    implementation "androidx.navigation:navigation-compose:2.4.2"
+
     //Terra SDK
     implementation files('libs/TerraSamsung-beta.aar')
     implementation 'com.google.android.libraries.healthdata:health-data-api:1.0.0-alpha01'

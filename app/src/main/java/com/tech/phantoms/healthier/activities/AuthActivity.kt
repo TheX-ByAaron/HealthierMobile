@@ -1,4 +1,4 @@
-package com.tech.phantoms.healthier
+package com.tech.phantoms.healthier.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,16 +13,29 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.tech.phantoms.healthier.R
+import com.tech.phantoms.healthier.ui.screens.CategoryChoice
+import com.tech.phantoms.healthier.ui.screens.CoachAuth
+import com.tech.phantoms.healthier.ui.screens.HomeAuth
 import com.tech.phantoms.healthier.ui.theme.HBlack
 import com.tech.phantoms.healthier.ui.theme.HealthierTheme
 
-class MainActivity : ComponentActivity() {
+class AuthActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_Healthier)
         setContent {
+            val navController = rememberNavController()
+
             MainActivityScreenContent {
-                MainScreen()
+                    NavHost(navController = navController, startDestination = "HomeAuth"){
+                        composable("HomeAuth"){ HomeAuth(navController = navController) }
+                        composable("CoachAuth"){ CoachAuth(navController = navController) }
+                        composable("Categories"){ CategoryChoice(navController = navController) }
+                    }
             }
         }
     }
@@ -35,21 +48,5 @@ fun MainActivityScreenContent(content: @Composable () -> Unit){
         Surface(color = MaterialTheme.colors.HBlack) {
             content()
         }
-    }
-}
-
-@Composable
-fun MainScreen(){
-    Column(modifier = Modifier.fillMaxSize()) {
-        Image(painter = painterResource(id = R.drawable.ic_logo_stripped)
-            , contentDescription = "main logo")
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    HealthierTheme {
-        MainScreen()
     }
 }
