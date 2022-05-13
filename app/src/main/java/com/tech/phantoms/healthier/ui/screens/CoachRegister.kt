@@ -114,7 +114,7 @@ fun CoachRegister(navController: NavController){
             })
 
         Surface(modifier = Modifier
-            .padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 24.dp)
+            .padding(start = 32.dp, end = 32.dp, top = 16.dp, bottom = 24.dp)
             .fillMaxWidth()
             .height(2.dp)
             , color = MaterialTheme.colors.Hyellow
@@ -133,7 +133,9 @@ fun CoachRegister(navController: NavController){
         HTextButton(text = "Log into your account now!"
             , tint = MaterialTheme.colors.Hyellow
             , onClick = {
-                //TODO: go to the login page
+                navController.navigate("CoachLogin"){
+                    launchSingleTop = true
+                }
             })
         
     }
