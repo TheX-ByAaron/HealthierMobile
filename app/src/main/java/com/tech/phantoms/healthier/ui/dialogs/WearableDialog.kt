@@ -14,13 +14,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import androidx.navigation.NavController
 import com.tech.phantoms.healthier.ui.composables.Hbutton
 import com.tech.phantoms.healthier.ui.theme.MediumRound
 import com.tech.phantoms.healthier.ui.theme.RoyalBlack
 import com.tech.phantoms.healthier.ui.theme.appFontFamily
 
 @Composable
-fun WearableDialog(isOpen: Boolean, setIsOpen : (Boolean) -> Unit){
+fun WearableDialog(isOpen: Boolean
+                   , setIsOpen : (Boolean) -> Unit
+                   , navController: NavController){
 
     Dialog(onDismissRequest = { setIsOpen(false) },
         properties = DialogProperties(dismissOnBackPress = true, dismissOnClickOutside = true)) {
@@ -59,6 +62,9 @@ fun WearableDialog(isOpen: Boolean, setIsOpen : (Boolean) -> Unit){
                     , text = "Yes"
                     , onClick = {
                         //TODO: Launch the auth flow
+                        navController.navigate("Categories"){
+                            launchSingleTop = true
+                        }
                     })
 
                 Hbutton(modifier = Modifier

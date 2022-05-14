@@ -49,7 +49,8 @@ fun HomeAuth(navController: NavController){
 
         if(isWearableConfirmationDialogOpen){
             WearableDialog(isOpen = isWearableConfirmationDialogOpen
-                , setIsOpen = setWearableConfirmation)
+                , setIsOpen = setWearableConfirmation
+                , navController = navController)
         }
 
         Image(painter = painterResource(id = R.drawable.ic_logo_stripped)

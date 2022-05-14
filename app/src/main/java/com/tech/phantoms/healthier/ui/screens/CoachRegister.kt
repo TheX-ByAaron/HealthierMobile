@@ -1,5 +1,7 @@
 package com.tech.phantoms.healthier.ui.screens
 
+import android.app.Activity
+import android.content.Intent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -12,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -21,6 +24,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.tech.phantoms.healthier.R
+import com.tech.phantoms.healthier.activities.HomeCoachActivity
 import com.tech.phantoms.healthier.ui.composables.HTextButton
 import com.tech.phantoms.healthier.ui.composables.Hbutton
 import com.tech.phantoms.healthier.ui.composables.PasswordInput
@@ -32,6 +36,8 @@ fun CoachRegister(navController: NavController){
 
     Column(modifier = Modifier.fillMaxSize()
         , horizontalAlignment = Alignment.CenterHorizontally) {
+
+        val activity = LocalContext.current as? Activity
 
         var emailStr by remember { mutableStateOf("") }
         var passwordStr by remember { mutableStateOf("") }
@@ -98,7 +104,7 @@ fun CoachRegister(navController: NavController){
                 , textAlign = TextAlign.Center
                 , modifier = Modifier.padding(start = 16.dp, end = 16.dp) )
 
-            Icon(painter = painterResource(id = R.drawable.ic_eye)
+            Icon(painter = painterResource(id = R.drawable.ic_folder_open)
                 , contentDescription = "upload certificate"
                 , tint = MaterialTheme.colors.Hyellow
                 , modifier = Modifier.padding(end = 16.dp))
@@ -110,7 +116,9 @@ fun CoachRegister(navController: NavController){
                 .padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 8.dp)
                 .fillMaxWidth()
             , onClick = {
-                //TODO: Do the sign up action
+                val intent = Intent(activity, HomeCoachActivity::class.java)
+                activity?.startActivity(intent)
+                activity?.finish()
             })
 
         Surface(modifier = Modifier

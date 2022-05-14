@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.appLauncher">
-
+        <activity
+            android:name=".activities.HomeCoachActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home_coach"
+            android:theme="@style/Theme.appLauncher" />
+        <activity
+            android:name=".activities.HomeUserActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home_user"
+            android:theme="@style/Theme.appLauncher" />
         <activity
             android:name=".activities.AuthActivity"
             android:exported="true"

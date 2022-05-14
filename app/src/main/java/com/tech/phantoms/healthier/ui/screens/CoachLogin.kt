@@ -1,5 +1,7 @@
 package com.tech.phantoms.healthier.ui.screens
 
+import android.app.Activity
+import android.content.Intent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
@@ -9,6 +11,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -16,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.tech.phantoms.healthier.activities.HomeCoachActivity
 import com.tech.phantoms.healthier.ui.composables.HTextButton
 import com.tech.phantoms.healthier.ui.composables.Hbutton
 import com.tech.phantoms.healthier.ui.composables.PasswordInput
@@ -27,6 +31,9 @@ import com.tech.phantoms.healthier.ui.theme.*
 fun CoachLogin(navController: NavController){
     Box(modifier = Modifier.fillMaxSize()
         , contentAlignment = Alignment.Center){
+
+        val activity = LocalContext.current as? Activity
+
         Column(modifier = Modifier
             .fillMaxWidth()
             .wrapContentHeight(),
@@ -64,7 +71,9 @@ fun CoachLogin(navController: NavController){
                     .padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 8.dp)
                     .fillMaxWidth()
                 , onClick = {
-                    //TODO: Do the sign in action
+                    val intent = Intent(activity, HomeCoachActivity::class.java)
+                    activity?.startActivity(intent)
+                    activity?.finish()
                 })
 
             Surface(modifier = Modifier

@@ -2,4 +2,6 @@
     <string name="app_name">Healthier</string>
     <string name="app_description">\"A healthy habit improving platform designed for everyone in order to motivate them for a better lifestyle by gamifying them through tailored challenges in a unique way \"</string>
     <string name="policy_description">Our app needs access to some activity data in order to function in full potential, and The requested permissions include: Location, Body Temperature, Respiratory Rate, Woman\'s Health, Heart Rate, Vo2Max, Activity, Personal Information, Sleep, Nutrition, Blood Pressure, Oxygen Saturation, and Blood Glucose.</string>
+    <string name="title_activity_home_user">HomeUserActivity</string>
+    <string name="title_activity_home_coach">HomeCoachActivity</string>
 </resources>
