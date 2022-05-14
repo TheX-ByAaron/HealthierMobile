@@ -123,7 +123,7 @@ fun RecommendationCard(recommendation: ChallengeRecommendation){
                 , fontFamily = appFontFamily
                 , fontWeight = FontWeight.Medium
                 , fontSize = 14.sp
-                , modifier = Modifier.padding(bottom = 4.dp))
+                , modifier = Modifier.padding(start = 4.dp))
         }
 
         Row(verticalAlignment = Alignment.CenterVertically
@@ -138,7 +138,7 @@ fun RecommendationCard(recommendation: ChallengeRecommendation){
                 , fontFamily = appFontFamily
                 , fontWeight = FontWeight.Medium
                 , fontSize = 14.sp
-                , modifier = Modifier.padding(bottom = 4.dp))
+                , modifier = Modifier.padding(start = 4.dp))
         }
 
         Row(verticalAlignment = Alignment.CenterVertically) {

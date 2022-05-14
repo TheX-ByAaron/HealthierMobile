@@ -1,6 +1,7 @@
 package com.tech.phantoms.healthier.ui.composables
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.height
@@ -18,10 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.tech.phantoms.healthier.ui.theme.FullRounded
-import com.tech.phantoms.healthier.ui.theme.HealthierTheme
-import com.tech.phantoms.healthier.ui.theme.Hpink
-import com.tech.phantoms.healthier.ui.theme.appFontFamily
+import com.tech.phantoms.healthier.ui.theme.*
 
 
 @Composable
@@ -45,6 +43,28 @@ fun Hbutton(modifier: Modifier = Modifier
             , fontFamily = appFontFamily
             , fontWeight = FontWeight.Bold
             , color = Color.White)
+    }
+}
+
+@Composable
+fun BoxButton(modifier: Modifier = Modifier
+              , text: String = ""
+              , onClick: () -> Unit = {}){
+
+    Box(modifier = modifier
+        .height(50.dp)
+        .border(2.dp, MaterialTheme.colors.Hyellow, MaterialTheme.shapes.MediumRound)
+        .clip(shape = MaterialTheme.shapes.MediumRound)
+        .clickable { onClick() }
+        .padding(horizontal = 24.dp, vertical = 8.dp)
+
+        , contentAlignment = Alignment.Center){
+
+        Text(text = text
+            , fontSize = 16.sp
+            , fontFamily = appFontFamily
+            , fontWeight = FontWeight.Bold
+            , color = MaterialTheme.colors.Hyellow)
     }
 }
 

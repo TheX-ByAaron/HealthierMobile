@@ -303,7 +303,7 @@ fun ChallengeCard(challenge: Challenge){
                 , fontFamily = appFontFamily
                 , fontWeight = FontWeight.Medium
                 , fontSize = 14.sp
-                , modifier = Modifier.padding(bottom = 4.dp))
+                , modifier = Modifier.padding(start = 4.dp))
         }
 
         Row(verticalAlignment = Alignment.CenterVertically
@@ -318,7 +318,7 @@ fun ChallengeCard(challenge: Challenge){
                 , fontFamily = appFontFamily
                 , fontWeight = FontWeight.Medium
                 , fontSize = 14.sp
-                , modifier = Modifier.padding(bottom = 4.dp))
+                , modifier = Modifier.padding(start = 4.dp))
         }
 
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -339,7 +339,8 @@ fun ChallengeCard(challenge: Challenge){
                 , color = Color.White
                 , fontFamily = appFontFamily
                 , fontWeight = FontWeight.Medium
-                , fontSize = 14.sp)
+                , fontSize = 14.sp
+                , modifier = Modifier.padding(start = 4.dp))
         }
 
         if(challenge.isFinished){

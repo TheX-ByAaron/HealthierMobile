@@ -15,3 +15,10 @@ data class ChallengeRecommendation(
     var endDate: String,
     var coach: Coach
 )
+
+data class ChallengeAnalytic(
+    var title: String,
+    var coach: Coach,
+    var duration: String,
+    var participantNumber: Int
+)
