@@ -31,7 +31,7 @@ fun ChallengeDetailsScreen(){
         , "Training makes wonders, start small, take a walk for 20 minutes each day for 10 days"
         , "This challenge is for people who struggle"
         , "20-05-2022", "30-05-2022"
-        , coach, 0.35F, true)
+        , coach, 0.35F, false)
 
     LazyColumn(modifier = Modifier.fillMaxSize()){
 

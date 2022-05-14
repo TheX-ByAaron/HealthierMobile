@@ -61,6 +61,9 @@ dependencies {
     //Coil for image loading
     implementation "io.coil-kt:coil-compose:2.0.0"
 
+    //library for charts in compose
+    implementation 'com.github.tehras.charts:bar:beta-01'
+
     //Terra SDK
     implementation files('libs/TerraSamsung-beta.aar')
     implementation 'com.google.android.libraries.healthdata:health-data-api:1.0.0-alpha01'
