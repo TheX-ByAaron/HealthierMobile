@@ -28,11 +28,11 @@ fun HealthChip(modifier: Modifier = Modifier
                , isSelected: Boolean
                , setIsSelected: (Boolean) -> Unit){
 
-    var isChipSelected by remember { mutableStateOf(isSelected) }
-    val backgroundColor = animateColorAsState(targetValue = if(isChipSelected)
+
+    val backgroundColor = animateColorAsState(targetValue = if(isSelected)
         MaterialTheme.colors.Hyellow else MaterialTheme.colors.RoyalBlack)
 
-    val textColor = animateColorAsState(targetValue = if (isChipSelected) MaterialTheme.colors.RoyalBlack
+    val textColor = animateColorAsState(targetValue = if (isSelected) MaterialTheme.colors.RoyalBlack
         else MaterialTheme.colors.Hyellow)
 
     Box(modifier = modifier
@@ -46,7 +46,6 @@ fun HealthChip(modifier: Modifier = Modifier
         )
         .clickable {
             setIsSelected(!isSelected)
-            isChipSelected = !isChipSelected
         }
         , contentAlignment = Alignment.Center){
 
