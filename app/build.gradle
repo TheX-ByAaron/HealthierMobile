@@ -64,6 +64,9 @@ dependencies {
     //library for charts in compose
     implementation 'com.github.madrapps:plot:0.1.1'
 
+    //gson
+    implementation 'com.google.code.gson:gson:2.9.0'
+
     //Terra SDK
     implementation files('libs/TerraSamsung-beta.aar')
     implementation 'com.google.android.libraries.healthdata:health-data-api:1.0.0-alpha01'

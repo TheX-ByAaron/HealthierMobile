@@ -1,5 +1,6 @@
 package com.tech.phantoms.healthier.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -23,7 +24,14 @@ class AuthActivity : ComponentActivity() {
         setTheme(R.style.Theme_Healthier)
         setContent {
             val navController = rememberNavController()
+            val prefs = getSharedPreferences("HEALTHIER_APP", MODE_PRIVATE)
+            val isUserAuth = prefs.getBoolean("AUTH_USER", false)
 
+            if(isUserAuth){
+                val intent = Intent(this, HomeUserActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
             MainActivityScreenContent {
                     NavHost(navController = navController, startDestination = "HomeAuth"){
                         composable("HomeAuth"){ HomeAuth(navController = navController) }

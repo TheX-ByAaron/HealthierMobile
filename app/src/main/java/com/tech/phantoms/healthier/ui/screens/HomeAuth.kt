@@ -8,6 +8,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -17,6 +18,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import co.tryterra.terra.HealthStoreManager
+import co.tryterra.terra.Terra
+import com.google.android.libraries.healthdata.HealthDataClient
+import com.google.android.libraries.healthdata.HealthDataService
 import com.tech.phantoms.healthier.R
 import com.tech.phantoms.healthier.ui.composables.HTextButton
 import com.tech.phantoms.healthier.ui.composables.Hbutton
@@ -94,7 +99,6 @@ fun HomeAuth(navController: NavController){
             , text= "I am a coach"
             , tint = MaterialTheme.colors.Hpink
             , onClick = {
-                //TODO: launch the coach page
                 navController.navigate("CoachRegister"){
                     launchSingleTop = true
                 }
