@@ -14,6 +14,7 @@ import com.tech.phantoms.healthier.R
 import com.tech.phantoms.healthier.ui.composables.BottomNavBar
 import com.tech.phantoms.healthier.ui.composables.NavRoute
 import com.tech.phantoms.healthier.ui.composables.TopBar
+import com.tech.phantoms.healthier.ui.screens.ChallengesScreen
 import com.tech.phantoms.healthier.ui.screens.HomeUserScreen
 import com.tech.phantoms.healthier.ui.screens.LeaderBoardScreen
 import com.tech.phantoms.healthier.ui.screens.UserCoachesScreen
@@ -43,7 +44,7 @@ class HomeUserActivity : ComponentActivity() {
                     content = {
                       NavHost(navController = navController, startDestination = "HomeUser"){
                           composable("HomeUser"){ HomeUserScreen(navController = navController) }
-                          composable("Challenges"){}
+                          composable("Challenges"){ ChallengesScreen() }
                           composable("LeaderBoard"){ LeaderBoardScreen() }
                           composable("Coaches"){ UserCoachesScreen() }
                       }

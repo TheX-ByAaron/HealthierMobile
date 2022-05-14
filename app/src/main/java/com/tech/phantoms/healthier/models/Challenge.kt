@@ -8,3 +8,10 @@ data class Challenge(
     var progress: Float,
     var isFinished: Boolean
 )
+
+data class ChallengeRecommendation(
+    var title: String,
+    var startDate: String,
+    var endDate: String,
+    var coach: Coach
+)
