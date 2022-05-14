@@ -55,7 +55,7 @@ fun HomeUserScreen(navController: NavController){
         }
 
         item{
-            FinishedChallenges()
+            FinishedChallenges(navController)
         }
 
         item{
@@ -205,7 +205,7 @@ fun OngoingChallenges(navController: NavController){
 }
 
 @Composable
-fun FinishedChallenges(){
+fun FinishedChallenges(navController: NavController){
 
     val coach = Coach("steven.morphy@mail.com", "steven morphy", "", "")
     val challenge = Challenge("10 days walk", "", ""
@@ -234,7 +234,9 @@ fun FinishedChallenges(){
             .fillMaxWidth()
             .wrapContentWidth()){
             items(4){
-                ChallengeCard(challenge = challenge)
+                ChallengeCard(challenge = challenge, onClick =  {
+                    navController.navigate("ChallengePerformance")
+                })
             }
         }
 
@@ -275,11 +277,10 @@ fun TeeraParameter(title: String, value: String){
 }
 
 @Composable
-fun ChallengeCard(challenge: Challenge, onClick: () -> Unit = {}){
+fun ChallengeCard(modifier: Modifier = Modifier.padding(8.dp).wrapContentWidth(),
+                  challenge: Challenge, onClick: () -> Unit = {}){
 
-    Column(modifier = Modifier
-        .padding(8.dp)
-        .wrapContentWidth()
+    Column(modifier = modifier
         .heightIn(min = 180.dp)
         .background(
             color = MaterialTheme.colors.RoyalBlack,

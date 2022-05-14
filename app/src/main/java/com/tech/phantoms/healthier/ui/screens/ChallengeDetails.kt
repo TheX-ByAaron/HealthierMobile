@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -18,6 +18,7 @@ import com.tech.phantoms.healthier.R
 import com.tech.phantoms.healthier.models.Challenge
 import com.tech.phantoms.healthier.models.Coach
 import com.tech.phantoms.healthier.ui.composables.Hbutton
+import com.tech.phantoms.healthier.ui.dialogs.RequestCoachDialog
 import com.tech.phantoms.healthier.ui.theme.Hyellow
 import com.tech.phantoms.healthier.ui.theme.MediumRound
 import com.tech.phantoms.healthier.ui.theme.RoyalBlack
@@ -33,10 +34,19 @@ fun ChallengeDetailsScreen(){
         , "20-05-2022", "30-05-2022"
         , coach, 0.35F, false)
 
+    var isDialogOpen by remember{ mutableStateOf(false) }
+    var setIsDialogOpen : (Boolean) -> Unit = {
+        isDialogOpen = it
+    }
+
+    if(isDialogOpen){
+        RequestCoachDialog(setIsOpen = setIsDialogOpen)
+    }
+
     LazyColumn(modifier = Modifier.fillMaxSize()){
 
         item {
-            ChallengeCard(challenge = challenge)
+            ChallengeCard(challenge = challenge, modifier = Modifier.padding(8.dp).fillMaxWidth())
         }
 
         item {
@@ -71,7 +81,9 @@ fun ChallengeDetailsScreen(){
                         .padding(8.dp)
                         .widthIn(min = 120.dp)
                         , text = "Yes"
-                        , onClick = {})
+                        , onClick = {
+                            setIsDialogOpen(true)
+                        })
 
                     Hbutton(modifier = Modifier
                         .padding(8.dp)

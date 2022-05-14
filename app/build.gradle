@@ -62,7 +62,7 @@ dependencies {
     implementation "io.coil-kt:coil-compose:2.0.0"
 
     //library for charts in compose
-    implementation 'com.github.tehras.charts:bar:beta-01'
+    implementation 'com.github.madrapps:plot:0.1.1'
 
     //Terra SDK
     implementation files('libs/TerraSamsung-beta.aar')

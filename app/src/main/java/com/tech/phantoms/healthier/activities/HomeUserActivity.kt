@@ -44,7 +44,7 @@ class HomeUserActivity : ComponentActivity() {
                           composable("Challenges"){ ChallengesScreen() }
                           composable("LeaderBoard"){ LeaderBoardScreen() }
                           composable("Coaches"){ UserCoachesScreen() }
-                          composable("ChallengePerformance"){}
+                          composable("ChallengePerformance"){ ChallengePerformanceScreen() }
                           composable("ChallengeDetails"){ ChallengeDetailsScreen() }
                       }
                     },
