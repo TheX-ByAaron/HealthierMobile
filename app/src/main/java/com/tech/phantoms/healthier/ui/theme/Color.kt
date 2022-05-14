@@ -22,4 +22,4 @@ val Colors.HBlack : Color
     get() = black200
 
 val Colors.RoyalBlack : Color
-    get() = Color(0xFF333333)
+    get() = Color(0xFF222222)
