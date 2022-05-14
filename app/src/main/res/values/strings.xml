@@ -4,4 +4,5 @@
     <string name="policy_description">Our app needs access to some activity data in order to function in full potential, and The requested permissions include: Location, Body Temperature, Respiratory Rate, Woman\'s Health, Heart Rate, Vo2Max, Activity, Personal Information, Sleep, Nutrition, Blood Pressure, Oxygen Saturation, and Blood Glucose.</string>
     <string name="title_activity_home_user">HomeUserActivity</string>
     <string name="title_activity_home_coach">HomeCoachActivity</string>
+    <string name="challenge_question">Your activity statistics can be interpreted by the coach, do you want to ask for the expert coach feedback ?</string>
 </resources>

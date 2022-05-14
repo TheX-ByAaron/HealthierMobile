@@ -14,10 +14,7 @@ import com.tech.phantoms.healthier.R
 import com.tech.phantoms.healthier.ui.composables.BottomNavBar
 import com.tech.phantoms.healthier.ui.composables.NavRoute
 import com.tech.phantoms.healthier.ui.composables.TopBar
-import com.tech.phantoms.healthier.ui.screens.ChallengesScreen
-import com.tech.phantoms.healthier.ui.screens.HomeUserScreen
-import com.tech.phantoms.healthier.ui.screens.LeaderBoardScreen
-import com.tech.phantoms.healthier.ui.screens.UserCoachesScreen
+import com.tech.phantoms.healthier.ui.screens.*
 import com.tech.phantoms.healthier.ui.theme.HBlack
 import com.tech.phantoms.healthier.ui.theme.HealthierTheme
 
@@ -47,6 +44,8 @@ class HomeUserActivity : ComponentActivity() {
                           composable("Challenges"){ ChallengesScreen() }
                           composable("LeaderBoard"){ LeaderBoardScreen() }
                           composable("Coaches"){ UserCoachesScreen() }
+                          composable("ChallengePerformance"){}
+                          composable("ChallengeDetails"){ ChallengeDetailsScreen() }
                       }
                     },
 

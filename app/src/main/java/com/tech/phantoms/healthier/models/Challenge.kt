@@ -2,6 +2,8 @@ package com.tech.phantoms.healthier.models
 
 data class Challenge(
     var title: String,
+    var description: String = "",
+    var goal: String = "",
     var startDate: String,
     var endDate: String,
     var coach: Coach,

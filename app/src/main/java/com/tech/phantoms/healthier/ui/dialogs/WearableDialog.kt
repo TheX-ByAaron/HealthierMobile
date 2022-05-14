@@ -61,7 +61,6 @@ fun WearableDialog(isOpen: Boolean
                     .widthIn(min = 120.dp)
                     , text = "Yes"
                     , onClick = {
-                        //TODO: Launch the auth flow
                         navController.navigate("Categories"){
                             launchSingleTop = true
                         }

@@ -2,6 +2,7 @@ package com.tech.phantoms.healthier.ui.screens
 
 import android.content.Intent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -50,7 +51,7 @@ fun HomeUserScreen(navController: NavController){
         }
 
         item{
-            OngoingChallenges()
+            OngoingChallenges(navController)
         }
 
         item{
@@ -167,10 +168,10 @@ fun PersonalActivity(){
 }
 
 @Composable
-fun OngoingChallenges(){
+fun OngoingChallenges(navController: NavController){
 
     val coach = Coach("steven.morphy@mail.com", "steven morphy", "", "")
-    val challenge = Challenge("10 days walk", "20-05-2022", "30-05-2022", coach, 0.35F, false)
+    val challenge = Challenge("10 days walk", "", "","20-05-2022", "30-05-2022", coach, 0.35F, false)
 
     Column(
         modifier = Modifier
@@ -194,7 +195,9 @@ fun OngoingChallenges(){
             .fillMaxWidth()
             .wrapContentWidth()){
             items(6){
-                ChallengeCard(challenge = challenge)
+                ChallengeCard(challenge = challenge, onClick = {
+                    navController.navigate("ChallengeDetails")
+                })
             }
         }
 
@@ -205,7 +208,8 @@ fun OngoingChallenges(){
 fun FinishedChallenges(){
 
     val coach = Coach("steven.morphy@mail.com", "steven morphy", "", "")
-    val challenge = Challenge("10 days walk", "20-05-2022", "30-05-2022", coach, 0.35F, true)
+    val challenge = Challenge("10 days walk", "", ""
+        , "20-05-2022", "30-05-2022", coach, 0.35F, true)
 
 
     Column(
@@ -271,7 +275,7 @@ fun TeeraParameter(title: String, value: String){
 }
 
 @Composable
-fun ChallengeCard(challenge: Challenge){
+fun ChallengeCard(challenge: Challenge, onClick: () -> Unit = {}){
 
     Column(modifier = Modifier
         .padding(8.dp)
@@ -279,8 +283,11 @@ fun ChallengeCard(challenge: Challenge){
         .heightIn(min = 180.dp)
         .background(
             color = MaterialTheme.colors.RoyalBlack,
-            shape = MaterialTheme.shapes.MediumRound
-        ).padding(16.dp),
+            shape = MaterialTheme.shapes.MediumRound)
+        .clickable {
+            onClick()
+        }
+        .padding(16.dp),
         horizontalAlignment = Alignment.Start) {
 
         Text(text = challenge.title
@@ -288,7 +295,7 @@ fun ChallengeCard(challenge: Challenge){
             , fontFamily = appFontFamily
             , fontWeight = FontWeight.Bold
             , fontSize = 16.sp
-            , modifier = Modifier.padding(start = 8.dp,end= 4.dp,top = 4.dp, bottom = 2.dp))
+            , modifier = Modifier.padding(start = 8.dp,end= 4.dp,top = 4.dp, bottom = 8.dp))
 
         Row(verticalAlignment = Alignment.CenterVertically
             , modifier = Modifier.padding(start = 4.dp, end = 4.dp, bottom = 8.dp)) {
