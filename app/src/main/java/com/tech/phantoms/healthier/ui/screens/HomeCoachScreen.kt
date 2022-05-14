@@ -1,6 +1,7 @@
 package com.tech.phantoms.healthier.ui.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
@@ -56,10 +57,11 @@ fun HomeCoachScreen(navController: NavController){
             .fillMaxWidth()
             .wrapContentHeight()){
             items(20){
-                CoachChallengeCard(challenge = challengeAnalytic)
+                CoachChallengeCard(challenge = challengeAnalytic) {
+                    navController.navigate("challengeDescription")
+                }
             }
         }
-
 
         BoxButton(text = "Add a challenge"
             , modifier = Modifier
@@ -111,7 +113,7 @@ fun CoachHeader(){
 
 
 @Composable
-fun CoachChallengeCard(challenge: ChallengeAnalytic){
+fun CoachChallengeCard(challenge: ChallengeAnalytic, onClick: () -> Unit = {}){
     Column(modifier = Modifier
         .padding(8.dp)
         .wrapContentWidth()
@@ -120,7 +122,9 @@ fun CoachChallengeCard(challenge: ChallengeAnalytic){
             color = MaterialTheme.colors.RoyalBlack,
             shape = MaterialTheme.shapes.MediumRound
         )
-        .padding(16.dp),
+        .padding(16.dp).clickable {
+            onClick()
+        },
         horizontalAlignment = Alignment.Start) {
 
         Text(text = challenge.title
